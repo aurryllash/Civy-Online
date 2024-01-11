@@ -1,0 +1,24 @@
+.d-flex {
+    padding-right: 20px;
+}
+.log-in {
+    margin-right: 30px;
+    font-weight: 700;
+    font-size: 18px;
+}
+.registration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.sign-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+}
+li a {
+    list-style-type: none;
+    text-decoration: none;
+}

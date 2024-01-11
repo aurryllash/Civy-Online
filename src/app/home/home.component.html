@@ -1,0 +1,14 @@
+<div class="product">
+    <ul>
+        <li *ngFor="let item of product">
+            <div class="card" style="width: 18rem;" *ngIf="item.active">
+                <img [src]=item.image class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{ item.title }}</h5>
+                  <p class="price">Price: {{ item.price }}</p>
+                  <h6>Added by: {{getUserName(item.userId)}}</h6>
+                </div>
+             </div>
+        </li>
+    </ul>
+</div>
