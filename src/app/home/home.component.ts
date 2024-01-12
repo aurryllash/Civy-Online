@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit{
   product!: Product[];
   users!: User[];
   constructor(private productService: ProductService) {}
+  
   ngOnInit(): void {
     this.productService.getAll().subscribe(response => {
       this.product = response
@@ -19,14 +20,18 @@ export class HomeComponent implements OnInit{
       this.users = userResponse
     })
   }
+
   getUserName(userId: number) {
-    const nameOfUser = this.users.find(n => n.id === userId)
-    if(nameOfUser) {
-      return nameOfUser.username;
+    if (this.users) {
+      const nameOfUser = this.users.find(n => n.id === userId);
+      if (nameOfUser) {
+        return nameOfUser.username;
+      } else {
+        return "cannot find username";
+      }
     } else {
-      return "idk"
+      return "Loading users...";
     }
-    
   }
   
 }

@@ -8,6 +8,7 @@ import { RegistrationComponent } from './getInto/registration/registration.compo
 import { SignInComponent } from './getInto/sign-in/sign-in.component';
 import { HeaderComponent } from './header/header.component';
 import { EachProductComponent } from './each-product/each-product.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { EachProductComponent } from './each-product/each-product.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration()
