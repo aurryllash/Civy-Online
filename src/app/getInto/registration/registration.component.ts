@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './registration.component.css'
 })
 export class RegistrationComponent {
+  constructor(private fb: FormBuilder) {}
 
+  user = this.fb.group({
+    name: [''],
+    
+  })
 }
