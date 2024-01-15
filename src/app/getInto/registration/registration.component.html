@@ -29,8 +29,11 @@
 
                 <div class="form-outline mb-4">
                     <input type="text" id="userName" class="form-control form-control-lg" [ngClass]="{'is-invalid': user.get('userName')?.errors && user.get('userName')?.touched}" formControlName="userName"/>
-                    <div class="invalid-feedback">
+                    <div class="invalid-feedback" *ngIf="user.get('userName')?.hasError('required') && user.get('userName')?.touched">
                       Please Enter an Username!
+                    </div>
+                    <div class="invalid-feedback" *ngIf="user.get('userName')?.hasError('usernameTaken') && user.get('userName')?.touched">
+                      Username is already taken!
                     </div>
                     <label class="form-label" for="userName">Your username</label>
                 </div>
@@ -57,9 +60,9 @@
                   <div class="invalid-feedback" *ngIf="user.get('repeatPassword')?.hasError('confirmedValidator') && user.get('repeatPassword')?.touched">
                     Password does not Matches!
                   </div>
-                  <!-- <div class="invalid-feedback" *ngIf="user.get('repeatPassword')?.hasError('required') && user.get('repeatPassword')?.touched">
-                    Password Enter a Confirm Password!
-                  </div> -->
+                  <div class="invalid-feedback" *ngIf="user.get('repeatPassword')?.hasError('required') && user.get('repeatPassword')?.touched">
+                    Enter a Confirm Password!
+                  </div>
 
                   <label class="form-label" for="repeatPassword">Repeat your password</label>
                 </div>
@@ -74,10 +77,11 @@
 
                 <div class="d-flex justify-content-center">
                   <button type="submit"
-                    class="btn btn-success btn-block btn-lg gradient-custom-4" value="Submit">Register</button>
+                    class="btn btn-success btn-block btn-lg gradient-custom-4" value="Submit" [disabled]="user.invalid">Register</button>
                 </div>
 
-                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!"
+
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a routerLink="/signIn"
                     class="fw-bold text-body"><u>Sign in here</u></a></p>
 
               </form>

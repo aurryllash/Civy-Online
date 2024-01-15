@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ConfirmedValidator } from '../confirm-password.validators';
+import { CheckUserService } from '../check-user.service';
+import { AuthenticationService } from '../authentication.service';
+import { User } from '../../interfaces/product.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -9,13 +13,13 @@ import { ConfirmedValidator } from '../confirm-password.validators';
 })
 export class RegistrationComponent {
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private checkUsername: CheckUserService, private auth: AuthenticationService, private router: Router) {}
   
 
   user = this.fb.group({
     name: ['', [Validators.required]],
     lastName: ['', [Validators.required]],
-    userName: ['', [Validators.required]],
+    userName: ['', [Validators.required], this.checkUsername.validateUsernameNotTaken.bind(this.checkUsername)],
     email: ['', [Validators.required]],
     check: ['', Validators.required],
     password: ['', [Validators.required, Validators.minLength(5)]],
@@ -25,8 +29,31 @@ export class RegistrationComponent {
     validator: ConfirmedValidator('password', 'repeatPassword')
   }
   )
+
+  // autoFill() {
+  //   this.user.patchValue({
+  //     name: "lasha",
+  //     lastName: 'Tsiklauri',
+  //     userName: 'yazvnu',
+  //     email: "lashas@gmailcom",
+  //     check: true,
+  //     password: "lashalasha",
+  //     repeatPassword: "lashalasha",
+  //   })
+  // }
+
   onSubmit() {
-    console.log(this.user.get('repeatPassword')?.errors);
-    console.log(this.user.get('password')?.errors);
+    
+    const postUser = {...this.user.value}
+    delete postUser.repeatPassword
+    delete postUser.check
+
+    this.auth.registerUser(postUser as User).subscribe(
+      (response) => {
+        console.log(response)
+        this.router.navigate(['/signIn'])
+      },
+      error => console.log(error)
+    )
   }
 }

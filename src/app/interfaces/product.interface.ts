@@ -9,11 +9,11 @@ export interface Product {
         rate:number,
         count:number
     },
-    userId: number,
+    userId: string,
     active: boolean
 }
 export interface User {
-    id: number,
+    id: string,
     name: string,
     lastName: string,
     email: string,

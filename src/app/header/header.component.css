@@ -3,7 +3,7 @@
 }
 .log-in {
     margin-right: 30px;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 18px;
 }
 .registration {
@@ -21,4 +21,5 @@
 li a {
     list-style-type: none;
     text-decoration: none;
+    color: black;
 }

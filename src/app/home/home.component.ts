@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit{
     })
   }
 
-  getUserName(userId: number) {
+  getUserName(userId: string) {
     if (this.users) {
       const nameOfUser = this.users.find(n => n.id === userId);
       if (nameOfUser) {

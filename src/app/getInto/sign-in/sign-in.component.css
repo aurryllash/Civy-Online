@@ -1,0 +1,15 @@
+.gradient-custom-3 {
+
+    padding: 40px;
+    border-radius: 20px;
+}
+.gradient-custom-4 {
+    background-color: white;
+    transition: 0.3s;
+    color: black;
+    border: 1px solid black;
+}
+.gradient-custom-4:hover {
+    background-color: black;
+    color: white;
+}
