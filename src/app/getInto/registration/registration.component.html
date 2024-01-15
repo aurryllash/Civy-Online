@@ -54,7 +54,7 @@
                 <div class="form-outline mb-4">
                   <input type="password" id="repeatPassword" class="form-control form-control-lg" [ngClass]="{'is-invalid': user.get('repeatPassword')?.errors && user.get('repeatPassword')?.touched}" formControlName="repeatPassword"/>
 
-                  <div class="invalid-feedback" *ngIf="user.get('repeatPassword')?.hasError('passwordsNotMatch') && user.get('repeatPassword')?.touched">
+                  <div class="invalid-feedback" *ngIf="user.get('repeatPassword')?.hasError('confirmedValidator') && user.get('repeatPassword')?.touched">
                     Password does not Matches!
                   </div>
                   <!-- <div class="invalid-feedback" *ngIf="user.get('repeatPassword')?.hasError('required') && user.get('repeatPassword')?.touched">
@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="form-check d-flex justify-content-center mb-5">
-                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                  <input class="form-check-input me-2" formControlName="check" type="checkbox" value="" id="form2Example3cg" />
                   <label class="form-check-label" for="form2Example3g">
                     I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
                   </label>

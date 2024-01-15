@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { confirmPasswordValidator } from '../confirm-password.validators';
+import { ConfirmedValidator } from '../confirm-password.validators';
 
 @Component({
   selector: 'app-registration',
@@ -17,11 +17,14 @@ export class RegistrationComponent {
     lastName: ['', [Validators.required]],
     userName: ['', [Validators.required]],
     email: ['', [Validators.required]],
+    check: ['', Validators.required],
     password: ['', [Validators.required, Validators.minLength(5)]],
     repeatPassword: ['', [Validators.required]],
   }, 
-  {validators: confirmPasswordValidator  }
-     )
+  { 
+    validator: ConfirmedValidator('password', 'repeatPassword')
+  }
+  )
   onSubmit() {
     console.log(this.user.get('repeatPassword')?.errors);
     console.log(this.user.get('password')?.errors);
