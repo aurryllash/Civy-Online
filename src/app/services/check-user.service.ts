@@ -1,20 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
-import { Product, User } from '../interfaces/product.interface';
+import { AbstractControl } from '@angular/forms';
+import {  Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class CheckUserService {
+
   constructor(private http: HttpClient) { }
-  getAll(): Observable<Product[]> {
-    return this.http.get<Product[]>("http://localhost:3000/products")
+  validateUsernameNotTaken(control: AbstractControl) {
+    return this.checkUsernameNotTaken(control.value).pipe(
+      map(res => {
+        return res ? null : { usernameTaken: true };
+      })
+    );
   }
-  getAllusers(): Observable<User[]> {
-    return this.http.get<User[]>("http://localhost:3000/users")
-  }
-  
+
   checkUsernameNotTaken(username: string): Observable<boolean> {
     return this.http.get("http://localhost:3000/users").pipe(
       map((usernameList: any) =>
@@ -23,6 +25,5 @@ export class ProductService {
       map(users => !users.length)
     );
   }
-
 
 }

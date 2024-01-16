@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { EachProductComponent } from './each-product/each-product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserlistComponent } from './userlist/userlist.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SignInComponent,
     HeaderComponent,
     EachProductComponent,
+    UserlistComponent,
     
   ],
   imports: [

@@ -23,6 +23,15 @@
       "email": "44332116@ibsu.edu.ge",
       "username": "nuca222",
       "password": "123123"
+    },
+    {
+      "id": "fa62",
+      "name": "lasha",
+      "lastName": "Tsiklauri",
+      "userName": "adminYazv",
+      "email": "lashatsiklauri@gmail.com",
+      "password": "admin123",
+      "role": "admin"
     }
   ],
   "products": [

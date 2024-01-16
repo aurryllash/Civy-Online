@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthenticationService } from '../getInto/authentication.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -11,11 +11,11 @@ export class HeaderComponent {
   constructor(private authService: AuthenticationService) {}
 
   ngOnInit(): void {
-    this.authService.isAuthenticated().subscribe((isAuthenticated) => {
-      this.isAuthenticated = isAuthenticated;
-    });
+    // this.authService.isAuthenticated().subscribe((isAuthenticated) => {
+    //   this.isAuthenticated = isAuthenticated;
+    // });
   }
   signOut(): void {
-    this.authService.signOut();
+    // this.authService.signOut();
   }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { AuthenticationService } from '../authentication.service';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -8,7 +9,12 @@ import { AuthenticationService } from '../authentication.service';
   styleUrl: './sign-in.component.css'
 })
 export class SignInComponent {
-  constructor(private fb: FormBuilder, private auth: AuthenticationService) {}
+
+  userData: any;
+
+  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) {
+    sessionStorage.clear()
+  }
 
   user = this.fb.group({
     email: ['', Validators.required],
@@ -16,6 +22,25 @@ export class SignInComponent {
   })
 
   onSubmit() {
-    // const {email, password} = this.user.value
+    this.auth.getBycode(this.user.value.email).subscribe(
+      (res) => {
+      this.userData = res;
+      console.log(this.userData.length)
+      if(this.userData.length !== 0) {
+        if(this.userData[0].password == this.user.value.password) {
+          sessionStorage.setItem('username', this.userData[0].userName)
+          sessionStorage.setItem('userrole', this.userData[0].role)
+          this.router.navigate(['/home'])
+        } else {
+          alert("email or password is incorrect...");
+          this.user.reset()
+        }
+      } else {
+        alert("email or password is incorrect...");
+        this.user.reset()
+      }
+      
+    }
+    )
   }
 }

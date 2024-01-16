@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ConfirmedValidator } from '../confirm-password.validators';
-import { CheckUserService } from '../check-user.service';
-import { AuthenticationService } from '../authentication.service';
+import { CheckUserService } from '../../services/check-user.service';
 import { User } from '../../interfaces/product.interface';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-registration',
@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class RegistrationComponent {
 
-  constructor(private fb: FormBuilder, private checkUsername: CheckUserService, private auth: AuthenticationService, private router: Router) {}
+  constructor(private fb: FormBuilder, private checkUsername: CheckUserService, private auth: AuthService, private router: Router) {}
   
 
   user = this.fb.group({
@@ -24,6 +24,7 @@ export class RegistrationComponent {
     check: ['', Validators.required],
     password: ['', [Validators.required, Validators.minLength(5)]],
     repeatPassword: ['', [Validators.required]],
+    role: ['']
   }, 
   { 
     validator: ConfirmedValidator('password', 'repeatPassword')
@@ -51,6 +52,7 @@ export class RegistrationComponent {
     this.auth.registerUser(postUser as User).subscribe(
       (response) => {
         console.log(response)
+        alert("user registered successfully")
         this.router.navigate(['/signIn'])
       },
       error => console.log(error)

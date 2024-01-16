@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product, User } from '../interfaces/product.interface';
-import { ProductService } from '../services/product.service';
+import { AuthService } from '../services/auth.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class EachProductComponent implements OnInit{
   item?: Product;
   users!: User[];
-  constructor(private productService: ProductService, private route: ActivatedRoute) {}
+  constructor(private productService: AuthService, private route: ActivatedRoute) {}
   ngOnInit(): void {
     this.route.params.subscribe( params => {
       this.productService.getAll().subscribe(response => {
