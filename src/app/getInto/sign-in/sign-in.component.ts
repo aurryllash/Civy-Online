@@ -25,10 +25,9 @@ export class SignInComponent {
     this.auth.getBycode(this.user.value.email).subscribe(
       (res) => {
       this.userData = res;
-      console.log(this.userData.length)
       if(this.userData.length !== 0) {
         if(this.userData[0].password == this.user.value.password) {
-          sessionStorage.setItem('username', this.userData[0].userName)
+          sessionStorage.setItem('username', this.userData[0].username)
           sessionStorage.setItem('userrole', this.userData[0].role)
           this.router.navigate(['/home'])
         } else {

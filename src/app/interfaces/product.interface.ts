@@ -12,11 +12,13 @@ export interface Product {
     userId: string,
     active: boolean
 }
+
 export interface User {
     id: string,
     name: string,
-    lastName: string,
+    lastname: string,
     email: string,
     username: string,
-    password: string
+    password: string,
+    role: string
 }

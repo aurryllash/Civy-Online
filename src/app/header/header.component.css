@@ -22,4 +22,9 @@ li a {
     list-style-type: none;
     text-decoration: none;
     color: black;
+    cursor: pointer;
+}
+.img-fluid {
+    max-width: 40px;
+    max-height: 40px;
 }

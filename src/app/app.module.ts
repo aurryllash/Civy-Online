@@ -11,6 +11,7 @@ import { EachProductComponent } from './each-product/each-product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserlistComponent } from './userlist/userlist.component';
+import { YouComponent } from './you/you.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +22,14 @@ import { UserlistComponent } from './userlist/userlist.component';
     HeaderComponent,
     EachProductComponent,
     UserlistComponent,
+    YouComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     provideClientHydration()

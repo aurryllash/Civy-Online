@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Product, User } from '../interfaces/product.interface';
+import { ActivatedRouteSnapshot } from '@angular/router';
 
 @Component({
   selector: 'app-home',

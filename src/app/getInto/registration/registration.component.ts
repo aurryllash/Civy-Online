@@ -18,13 +18,13 @@ export class RegistrationComponent {
 
   user = this.fb.group({
     name: ['', [Validators.required]],
-    lastName: ['', [Validators.required]],
-    userName: ['', [Validators.required], this.checkUsername.validateUsernameNotTaken.bind(this.checkUsername)],
+    lastname: ['', [Validators.required]],
+    username: ['', [Validators.required], this.checkUsername.validateUsernameNotTaken.bind(this.checkUsername)],
     email: ['', [Validators.required]],
     check: ['', Validators.required],
     password: ['', [Validators.required, Validators.minLength(5)]],
     repeatPassword: ['', [Validators.required]],
-    role: ['']
+    role: ['user']
   }, 
   { 
     validator: ConfirmedValidator('password', 'repeatPassword')
@@ -45,7 +45,7 @@ export class RegistrationComponent {
 
   onSubmit() {
     
-    const postUser = {...this.user.value}
+    const postUser = {...this.user.value }
     delete postUser.repeatPassword
     delete postUser.check
 

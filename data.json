@@ -1,37 +1,49 @@
 {
   "users": [
     {
+      "id": "fa62",
+      "name": "lasha",
+      "lastname": "Tsiklauri",
+      "username": "adminYazv",
+      "email": "lashatsiklauri@gmail.com",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
       "id": "1",
       "name": "lasha",
-      "lastName": "tsiklauri",
+      "lastname": "tsiklauri",
       "email": "22100521@ibsu.edu.ge",
       "username": "yazv111",
-      "password": "123456"
+      "password": "123456",
+      "role": "user"
     },
     {
       "id": "2",
       "name": "ninuca",
-      "lastName": "sikhuashvili",
+      "lastname": "sikhuashvili",
       "email": "1111224@ibsu.edu.ge",
       "username": "ninuca",
-      "password": "12341234"
+      "password": "12341234",
+      "role": "user"
     },
     {
       "id": "3",
       "name": "nuca",
-      "lastName": "jashiashvili",
+      "lastname": "jashiashvili",
       "email": "44332116@ibsu.edu.ge",
       "username": "nuca222",
-      "password": "123123"
+      "password": "123123",
+      "role": "user"
     },
     {
-      "id": "fa62",
-      "name": "lasha",
-      "lastName": "Tsiklauri",
-      "userName": "adminYazv",
-      "email": "lashatsiklauri@gmail.com",
-      "password": "admin123",
-      "role": "admin"
+      "id": "b520",
+      "name": "givi",
+      "lastname": "givishvili",
+      "username": "giviko",
+      "email": "givi@yahoo.com",
+      "password": "454545",
+      "role": "user"
     }
   ],
   "products": [
