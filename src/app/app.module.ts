@@ -12,6 +12,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserlistComponent } from './userlist/userlist.component';
 import { YouComponent } from './you/you.component';
+import { MyproductsComponent } from './myproducts/myproducts.component';
+import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -23,6 +28,8 @@ import { YouComponent } from './you/you.component';
     EachProductComponent,
     UserlistComponent,
     YouComponent,
+    MyproductsComponent,
+    UpdatepopupComponent
     
   ],
   imports: [
@@ -30,6 +37,9 @@ import { YouComponent } from './you/you.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatSlideToggleModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [
     provideClientHydration()

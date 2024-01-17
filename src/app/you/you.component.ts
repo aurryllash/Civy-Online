@@ -21,7 +21,6 @@ export class YouComponent implements OnInit{
           this.you = founded
         }
     })
-    
   }
 
   

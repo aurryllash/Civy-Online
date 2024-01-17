@@ -142,8 +142,8 @@
         "rate": 3,
         "count": 400
       },
-      "userId": "3",
-      "active": true
+      "userId": "1",
+      "active": false
     },
     {
       "id": 8,
