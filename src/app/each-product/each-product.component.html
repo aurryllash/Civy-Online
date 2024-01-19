@@ -2,8 +2,8 @@
     <img [src]="item?.image" class="card-img-top" alt="...">
     <div class="cards-body">
       <h5 class="card-title">{{ item?.title }}</h5>
-      <p class="price">Price: {{ item?.price }}</p>
-      <p class="description"><span>Description:</span> {{ item?.description }}</p>
-      <h6>Added by: {{ getUserName(item?.userId) }}</h6>
+      <p class="price">{{"Price" | translate}}: {{ item?.price }}</p>
+      <p class="description"><span>{{"Description" | translate}}:</span> {{ item?.description }}</p>
+      <h6>{{"Added by" | translate}}: {{ getUserName(item?.userId) }}</h6>
     </div>
   </div>

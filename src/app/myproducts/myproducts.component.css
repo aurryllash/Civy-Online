@@ -5,6 +5,10 @@
     align-items: center;
 }
 .containers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
   margin-left: 40px;
 }
 .addIcon {
@@ -13,6 +17,10 @@
 }
 .addIcon:hover {
   opacity: 40%;
+}
+strong {
+  font-size: 16px;
+  margin-left: 20px;
 }
 .card {
     margin: 10px;

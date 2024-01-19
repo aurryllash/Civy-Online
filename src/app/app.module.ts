@@ -8,7 +8,7 @@ import { RegistrationComponent } from './getInto/registration/registration.compo
 import { SignInComponent } from './getInto/sign-in/sign-in.component';
 import { HeaderComponent } from './header/header.component';
 import { EachProductComponent } from './each-product/each-product.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserlistComponent } from './userlist/userlist.component';
 import { YouComponent } from './you/you.component';
@@ -18,6 +18,14 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AddProductComponent } from './add-product/add-product.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json')
+}
 
 @NgModule({
   declarations: [
@@ -31,7 +39,8 @@ import { AddProductComponent } from './add-product/add-product.component';
     YouComponent,
     MyproductsComponent,
     UpdatepopupComponent,
-    AddProductComponent
+    AddProductComponent,
+    EditProductComponent
     
   ],
   imports: [
@@ -41,7 +50,16 @@ import { AddProductComponent } from './add-product/add-product.component';
     ReactiveFormsModule,
     MatSlideToggleModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    TranslateModule.forRoot({
+    defaultLanguage: 'en',
+    useDefaultLang: true,
+    loader: {
+      provide: TranslateLoader,
+      useFactory: createTranslateLoader,
+      deps: [HttpClient]
+    }
+  })
   ],
   providers: [
     provideClientHydration()

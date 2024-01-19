@@ -28,3 +28,15 @@ li a {
     max-width: 40px;
     max-height: 40px;
 }
+li {
+    list-style-type: none;
+}
+.translation {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.nav-trans a img {
+    margin-right: 10px;
+    width: 22px;
+}

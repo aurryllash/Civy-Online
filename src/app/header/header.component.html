@@ -7,11 +7,12 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+            <a class="nav-link active" aria-current="page" routerLink="/home">{{ "Home" | translate}}</a>
           </li>
           <li class="nav-item" *ngIf="isAdmin">
             <a class="nav-link" routerLink="/user">users</a>
           </li>
+          
         </ul>
         <form class="d-flex me-4" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -29,6 +30,16 @@
             </li>
         </ul>
     </div>
+    <ul class="translation">
+      <li class="nav-trans">
+        <a class="nav-link active" (click)="switchLanguage('geo')" aria-current="page"><img src="/assets/logo/georgia.png"  alt="GEORGIAN"></a>
+      </li>
+      <li class="nav-trans">
+        <a class="nav-link active" (click)="switchLanguage('en')" aria-current="page"><img src="/assets/logo/united-kingdom.png" alt="ENGLISH"></a>
+      </li>
+    </ul>
+
+    
     <div *ngIf="isAuthenticated"  class="collapse navbar-collapse log-in" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="sign-in">
@@ -39,7 +50,7 @@
     <div *ngIf="isAuthenticated"  class="collapse navbar-collapse log-in" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="sign-in">
-                <a   (click)="signOut()">sign out</a>
+                <a   (click)="signOut()">{{"sign out" | translate}}</a>
             </li>
         </ul>
     </div>

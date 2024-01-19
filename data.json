@@ -172,6 +172,20 @@
       },
       "userId": "1",
       "active": true
+    },
+    {
+      "id": "85b5",
+      "title": "wer",
+      "description": "wer",
+      "price": "wer",
+      "category": "men's clothing",
+      "image": "C:\\fakepath\\gabro.jpg",
+      "userId": "1",
+      "active": true,
+      "rating": {
+        "rate": 0,
+        "count": 0
+      }
     }
   ]
 }
