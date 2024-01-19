@@ -1,5 +1,6 @@
 .product {
     margin-top: 50px;
+    font-size: 16px;
 }
 .card {
     margin: 10px;
@@ -9,6 +10,7 @@
     border: none;
     position: relative;
     cursor: pointer;
+
   }
   
   img {
@@ -22,6 +24,9 @@
   img:hover {
     width: 32%;
   }
+  .card-title {
+    font-size: 18px;
+  }
   .price {
     font-weight: 600;
   }
@@ -32,11 +37,6 @@
     display: flex;
     flex-wrap: wrap;
   }
-  .warning {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10vh;
-    font-weight: 600;
-    font-size: 20px;
+  h6 {
+    font-size: 16px;
   }

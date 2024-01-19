@@ -1,7 +1,7 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { Product, User } from '../interfaces/product.interface';
-import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
+import { Product } from '../interfaces/product.interface';
+import { MatDialog } from '@angular/material/dialog';
 import { UpdatepopupComponent } from '../updatepopup/updatepopup.component';
 
 @Component({
@@ -13,7 +13,6 @@ export class MyproductsComponent {
 
   myProducts!: Product[];
  
-
   constructor(private auth: AuthService, private dialog: MatDialog) {
     const username = sessionStorage.getItem('username')
     this.auth.getAllusers().subscribe(res => {
@@ -26,23 +25,16 @@ export class MyproductsComponent {
     })
   }
 
-  updateProduct(code: any) {
-    this.dialog.open(UpdatepopupComponent, {
-      enterAnimationDuration: '1000ms',
+  updateProduct(Id: number) {
+   const popup = this.dialog.open(UpdatepopupComponent, {
+      enterAnimationDuration: '500ms',
       exitAnimationDuration: '500ms',
       width: '400px',
       height: '200px',
-      position: {
-        right: '40%',
-        left: '40%',
-        top: '-15%'
-      },
       data: {
-        usercode: code
+        usercode: Id
       },
     })
+    popup.afterClosed().subscribe()
   }
-
-
-
 }

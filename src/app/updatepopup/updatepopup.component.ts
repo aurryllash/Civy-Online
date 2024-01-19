@@ -1,18 +1,66 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 // import {MatButtonModule} from '@angular/material/button';
 import { AuthService } from '../services/auth.service';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormBuilder, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Product } from '../interfaces/product.interface';
 
 @Component({
   selector: 'app-updatepopup',
   templateUrl: './updatepopup.component.html',
   styleUrl: './updatepopup.component.css'
 })
-export class UpdatepopupComponent {
+export class UpdatepopupComponent implements OnInit{
 
-  constructor(private auth: AuthService, @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(private auth: AuthService, private fb: FormBuilder, @Inject(MAT_DIALOG_DATA) public data: any,
+  private dialog: MatDialogRef<UpdatepopupComponent>) { }
 
-  delete(itemId: string) {
+  editData!: Product;
 
+  ngOnInit(): void {
+    if(this.data.usercode != null && this.data.usercode != '') {
+      this.auth.getProductById(this.data.usercode).subscribe(res => {
+        if (Array.isArray(res) && res.length > 0) {
+          this.editData = res[0];
+          console.log(this.editData)
+        }
+        
+        this.product.setValue({id: this.editData.id, title: this.editData.title, price: this.editData.price, description: this.editData.description, category: this.editData.category, image: this.editData.image, rating: {
+          rate: this.editData.rating.rate, 
+          count: this.editData.rating.count
+        }, userId: this.editData.userId, active: !this.editData.active})
+      })
+    }
   }
+
+  updateProduct() {
+
+    if(this.product.valid) {
+      const productData: Product = this.product.value as Product;
+      this.auth.updateProduct(this.product.value.id, productData)
+      .subscribe(res => {
+        alert("product updated successfully!");
+        this.dialog.close();
+        
+      }
+      ) 
+      console.log(productData)
+    } 
+    
+  }
+  
+  product = this.fb.group({
+      id: 0,
+      title: [''],
+      price: 0,
+      description: [''],
+      category: [''],
+      image: [''],
+      rating: {
+        rate: 0, 
+        count: 0
+      },
+      userId: [''],
+      active: [false]
+  })
 }

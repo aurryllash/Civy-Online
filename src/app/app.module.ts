@@ -17,6 +17,7 @@ import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AddProductComponent } from './add-product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     UserlistComponent,
     YouComponent,
     MyproductsComponent,
-    UpdatepopupComponent
+    UpdatepopupComponent,
+    AddProductComponent
     
   ],
   imports: [

@@ -11,7 +11,7 @@ export interface Product {
     },
     userId: string,
     active: boolean
-}
+};
 
 export interface User {
     id: string,

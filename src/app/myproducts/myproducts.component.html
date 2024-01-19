@@ -3,18 +3,23 @@
       <li *ngFor="let item of myProducts">
         <ng-container >
           <div class="card" [ngClass]="{'inactive-item': !item.active}" style="width: 18rem;" >
-            <img [src]="item.image" class="card-img-top" alt="...">
+            <img [src]="item.image" class="card-img-top" alt="Product Image">
             <div class="card-body">
               <h5 class="card-title">{{ item.title }}</h5>
               <p class="price">Price: {{ item.price }}</p>
             </div>
             <div class="buttons">
                 <button p-button type="button" class="btn btn-light">Edit</button>
-                <button type="button" routerLink="/myproducts" (click)="updateProduct(item.active)" class="btn btn-dark">DELETE</button>
+                <button type="button" routerLink="/myproducts" *ngIf="item.active" (click)="updateProduct(item.id)" class="btn btn-dark">DELETE</button>
+                <button type="button" *ngIf="!item.active" routerLink="/myproducts" (click)="updateProduct(item.id)" class="btn btn-dark">RETURN</button>
             </div>
           </div>
         </ng-container>
       </li>
     </ul>
+    <div class="containers" routerLink="/addproduct">
+      <img class="addIcon" src="/assets/logo/add.png" style="width: 100px;" alt="">
+    </div>
   </div>
+ 
   <!-- routerLink="/product/{{ item.title }}" -->

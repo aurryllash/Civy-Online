@@ -1,0 +1,31 @@
+<h1>ADD PRODUCT</h1>
+<div class="container">
+    <form style="width: 400px;" [formGroup]="product" (ngSubmit)="addProduct()">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" formControlName="title" id="title">
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <input type="text" class="form-control" formControlName="description" id="description">
+        </div>
+
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <select class="form-select" formControlName="category" aria-label="Default select example">
+                <option selected>select one</option>
+                <option [value]="categories" *ngFor="let categories of category">{{categories}}</option>
+              </select>
+        </div>
+        <div class="mb-3">
+            <label for="Price" class="form-label">Price</label>
+            <input type="text" class="form-control" formControlName="price" id="Price">
+        </div>
+        <div class="mb-3">
+            <label for="Image" class="form-label">Image</label>
+            <input type="file" class="form-control" formControlName="image" id="Image">
+        </div>       
+        <button type="submit" class="btn btn-primary" [disabled]="product.invalid">Submit</button>
+      </form>
+</div>
+
