@@ -13,11 +13,7 @@ import { Product } from '../interfaces/product.interface';
 export class UpdatepopupComponent implements OnInit{
 
   constructor(private auth: AuthService, private fb: FormBuilder, @Inject(MAT_DIALOG_DATA) public data: any,
-  private dialog: MatDialogRef<UpdatepopupComponent>) { }
-
-  editData!: Product;
-
-  ngOnInit(): void {
+  private dialog: MatDialogRef<UpdatepopupComponent>) {
     if(this.data.usercode != null && this.data.usercode != '') {
       this.auth.getProductById(this.data.usercode).subscribe(res => {
         if (Array.isArray(res) && res.length > 0) {
@@ -30,7 +26,13 @@ export class UpdatepopupComponent implements OnInit{
           count: this.editData.rating.count
         }, userId: this.editData.userId, active: !this.editData.active})
       })
-    }
+    } 
+   }
+
+  editData!: Product;
+
+  ngOnInit(): void {
+    
   }
 
   updateProduct() {

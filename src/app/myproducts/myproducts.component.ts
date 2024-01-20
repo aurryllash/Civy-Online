@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Product } from '../interfaces/product.interface';
 import { MatDialog } from '@angular/material/dialog';
@@ -9,9 +9,10 @@ import { UpdatepopupComponent } from '../updatepopup/updatepopup.component';
   templateUrl: './myproducts.component.html',
   styleUrl: './myproducts.component.css'
 })
-export class MyproductsComponent {
+export class MyproductsComponent implements OnInit{
 
   myProducts!: Product[];
+  checkProduct: boolean = true;
  
   constructor(private auth: AuthService, private dialog: MatDialog) {
     const username = sessionStorage.getItem('username')
@@ -23,6 +24,14 @@ export class MyproductsComponent {
         })
       }
     })
+
+  }
+  ngOnInit(): void {
+    if(this.myProducts.length > 0) {
+      this.checkProduct = true
+    } else {
+      this.checkProduct = false
+    }
   }
 
   updateProduct(Id: number) {

@@ -15,8 +15,14 @@ export class HeaderComponent implements DoCheck{
   constructor(private auth: AuthService, private router: Router, private translate: TranslateService) {}
 
   ngDoCheck(): void {
-    let currentUrl = this.router.url
-    if(currentUrl == '/registration' || currentUrl == '/signIn') {
+    const userauth = sessionStorage.getItem("username") == null
+    // let currentUrl = this.router.url
+    // if(currentUrl == '/registration' || currentUrl == '/signIn') {
+    //   this.isAuthenticated = false
+    // } else {
+    //   this.isAuthenticated = true
+    // }
+    if(userauth) {
       this.isAuthenticated = false
     } else {
       this.isAuthenticated = true

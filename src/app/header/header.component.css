@@ -1,3 +1,6 @@
+.container {
+    margin: 0;   
+}
 .d-flex {
     padding-right: 20px;
 }
@@ -40,3 +43,23 @@ li {
     margin-right: 10px;
     width: 22px;
 }
+
+/* responsive */
+
+/* .container-fluid{
+    background-color: rgba(68, 78, 101, 0.67);
+} */
+@media(max-width: 991px) {
+    .sidebar {
+        background-color: rgba(243, 243, 243, 0.696);
+        backdrop-filter: blur(10px);
+        border-radius: 0 20px 20px 0;
+        border: none;
+    }
+    .trans {
+        margin-bottom: 10px;
+    }
+}
+.navbar-toggler .nav-icon {
+    color: white;
+  } 

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#" routerLink="/home"><img src="/assets/logo/social.png" width="40px" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,4 +55,51 @@
         </ul>
     </div>
   </nav>
+ -->
 
+<nav class="navbar navbar-expand-lg bg-dark">
+  <div class="container">
+    <a class="navbar-brand fs-4" routerLink="/home"><img src="/assets/logo/social.png" width="40px" alt=""></a>
+    <button class="navbar-toggler shadow-none" style="background: #000000;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon nav-icon"></span>
+    </button>
+    <!-- side-bar -->
+    <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <!-- offcanvas header -->
+      <div class="offcanvas-header text-white border-bottom shadow-none border-0">
+        <img src="/assets/logo/social.png" width="40px" alt="">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <!-- sisebar body -->
+      <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
+        <ul class="navbar-nav justify-content-start align-items-center fs-6 flex-grow-1 pe-3">
+          <li class="nav-item mx-2">
+            <a class="nav-link active text-white" aria-current="page" routerLink="/home">{{"Home" | translate}}</a>
+          </li>
+          <li class="nav-item mx-2" *ngIf="isAdmin">
+            <a class="nav-link" routerLink="/user" style="color: rgba(255, 255, 255, 0.709);">{{"Users" | translate}}</a>
+          </li>
+          <li class="nav-item mx-2" *ngIf="isAuthenticated">
+            <a class="nav-link" routerLink="/you" style="color: rgba(255, 255, 255, 0.709);">{{"My Profile" | translate}}</a>
+          </li>
+        </ul>
+        <!-- <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> -->
+        <!-- login / sing up -->
+        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3 trans">
+          <a class="nav-link active" (click)="switchLanguage('geo')" aria-current="page"><img src="/assets/logo/georgia.png" style="width: 22px; cursor: pointer;"  alt="GEORGIAN"></a>
+          <a class="nav-link active" (click)="switchLanguage('en')" aria-current="page"><img src="/assets/logo/united-kingdom.png" style="width: 22px; cursor: pointer;" alt="ENGLISH"></a>
+        </div>
+        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3 fs-6" *ngIf="!isAuthenticated">
+          <a class="text-white text-decoration-none px-3 py-1" routerLink="/signIn">{{"Login"}}</a>
+          <a class="text-white text-decoration-none px-3 py-1 bg-success rounded-4" routerLink="/registration">{{"Registration" | translate}}</a>
+        </div>
+        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3 fs-6" *ngIf="isAuthenticated">
+          <a class="text-white text-decoration-none px-3 py-1" style="cursor: pointer;" (click)="signOut()">{{"Sign Out" | translate}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

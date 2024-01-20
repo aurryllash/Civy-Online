@@ -1,4 +1,4 @@
-<div class="cards">
+<!-- <div class="cards">
     <img [src]="item?.image" class="card-img-top" alt="...">
     <div class="cards-body">
       <h5 class="card-title">{{ item?.title }}</h5>
@@ -6,4 +6,30 @@
       <p class="description"><span>{{"Description" | translate}}:</span> {{ item?.description }}</p>
       <h6>{{"Added by" | translate}}: {{ getUserName(item?.userId) }}</h6>
     </div>
-  </div>
+  </div> -->
+  <section style="background-color: #eee;">
+    <div class="container py-5">
+      <div class="row justify-content-center" >
+        <div class="col-md-8 col-lg-6 col-xl-4" >
+          <div class="card text-black d-flex align-items-center justify-content-center">
+            <i class="fab fa-apple fa-lg pt-3 pb-1 px-3"></i>
+            <img [src]="item?.image" class="card-img-top " alt="...">
+            <div class="card-body">
+              <div class="text-center">
+                <h5 class="card-title d-flex fs-4">{{ item?.title }}</h5>
+                <p class="text-muted mb-4">{{"Description" | translate}}: {{ item?.description }}</p>
+              </div>
+              <div>
+                <div class="d-flex justify-content-between">
+                  <span>{{"Price" | translate}}:</span><span>${{ item?.price }}</span>
+                </div>
+              </div>
+              <div class="d-flex justify-content-start total mt-4" style="font-weight: 600;">
+                <span>{{"Added by" | translate}}:</span><span>{{ getUserName(item?.userId) }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

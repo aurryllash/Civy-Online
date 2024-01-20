@@ -38,10 +38,10 @@
     },
     {
       "id": "b520",
-      "name": "givi",
-      "lastname": "givishvili",
-      "username": "giviko",
-      "email": "givi@yahoo.com",
+      "name": "levan",
+      "lastname": "shonia",
+      "username": "shonial",
+      "email": "levan@yahoo.com",
       "password": "454545",
       "role": "user"
     }
@@ -172,20 +172,6 @@
       },
       "userId": "1",
       "active": true
-    },
-    {
-      "id": "85b5",
-      "title": "wer",
-      "description": "wer",
-      "price": "wer",
-      "category": "men's clothing",
-      "image": "C:\\fakepath\\gabro.jpg",
-      "userId": "1",
-      "active": true,
-      "rating": {
-        "rate": 0,
-        "count": 0
-      }
     }
   ]
 }

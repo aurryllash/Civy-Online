@@ -3,6 +3,9 @@
   <img class="addIcon" src="/assets/logo/add.png" style="width: 70px;" alt="">
   <strong>{{"Add new product" | translate}}</strong>
 </div>
+<ng-container *ngIf="checkProduct" >
+  <h1 class="d-flex align-items-center justify-content-center" style="margin-top: 100px;">YOU DO NOT HAVE PRODUCT</h1>
+</ng-container>
 <div class="product">
 
     <ul>
@@ -24,6 +27,7 @@
         </ng-container>
       </li>
     </ul>
+
 
   </div>
  

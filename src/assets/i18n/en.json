@@ -4,7 +4,7 @@
     "users": "users",
     "Price": "Price",
     "Added by": "Added by",
-    "sign out": "sign out",
+    "Sign Out": "sign out",
     "Add new product": "Add new product",
     "Edit": "Edit",
     "DELETE": "DELETE",
@@ -17,5 +17,6 @@
     "Delete": "Delete",
     "Yes": "Yes",
     "Description": "Description",
-    "description": "description"
+    "description": "description",
+    "My Profile": "My Profile"
 }

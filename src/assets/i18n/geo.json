@@ -4,7 +4,7 @@
     "Price": "ფასი",
     "description": "აღწერა",
     "Added by": "დაამატა",
-    "sign out": "გასვლა",
+    "Sign Out": "გასვლა",
     "Add new product": "ახალი პროდუქტის დამატება",
     "Edit": "განახლება",
     "DELETE": "წაშლა",
@@ -16,5 +16,6 @@
     "Close": "დახურვა",
     "Delete": "წაშლა",
     "Yes": "დიახ",
-    "Description": "აღწერა"
+    "Description": "აღწერა",
+    "My Profile": "ჩემი პროფილი"
 }
