@@ -9,7 +9,7 @@ import { UpdatepopupComponent } from '../updatepopup/updatepopup.component';
   templateUrl: './myproducts.component.html',
   styleUrl: './myproducts.component.css'
 })
-export class MyproductsComponent implements OnInit{
+export class MyproductsComponent {
 
   myProducts!: Product[];
   checkProduct: boolean = true;
@@ -21,20 +21,15 @@ export class MyproductsComponent implements OnInit{
       if(userId) {
         this.auth.getAll().subscribe(response => {
           this.myProducts = response.filter(n => n.userId == userId)
+          this.checkProduct = this.myProducts.length > 0;
         })
+      } else {
+        this.checkProduct = false;
       }
     })
-
-  }
-  ngOnInit(): void {
-    if(this.myProducts.length > 0) {
-      this.checkProduct = true
-    } else {
-      this.checkProduct = false
-    }
   }
 
-  updateProduct(Id: number) {
+  updateProduct(Id: string) {
    const popup = this.dialog.open(UpdatepopupComponent, {
       enterAnimationDuration: '500ms',
       exitAnimationDuration: '500ms',

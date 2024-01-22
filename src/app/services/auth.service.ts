@@ -36,7 +36,7 @@ export class AuthService {
   }
 
   updateProduct(code: any, inputData: Product) {
-    const url = `http://localhost:3000/products?id=${code}`
+    const url = `http://localhost:3000/products/${code}`
   
     return this.http.patch(url, inputData, this.httpOptions)
   }

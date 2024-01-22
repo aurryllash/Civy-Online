@@ -52,7 +52,7 @@ export class UpdatepopupComponent implements OnInit{
   }
   
   product = this.fb.group({
-      id: 0,
+      id: '',
       title: [''],
       price: 0,
       description: [''],

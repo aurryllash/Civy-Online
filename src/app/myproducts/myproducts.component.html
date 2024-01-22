@@ -3,7 +3,7 @@
   <img class="addIcon" src="/assets/logo/add.png" style="width: 70px;" alt="">
   <strong>{{"Add new product" | translate}}</strong>
 </div>
-<ng-container *ngIf="checkProduct" >
+<ng-container *ngIf="!checkProduct" >
   <h1 class="d-flex align-items-center justify-content-center" style="margin-top: 100px;">YOU DO NOT HAVE PRODUCT</h1>
 </ng-container>
 <div class="product">
@@ -13,7 +13,7 @@
       <li *ngFor="let item of myProducts">
         <ng-container >
           <div class="card" [ngClass]="{'inactive-item': !item.active}" style="width: 18rem;" >
-            <img [src]="item.image" class="card-img-top" alt="Product Image">
+            <img [src]="item.image" class="card-img-top" alt="Product Image" routerLink="/product/{{ item.title }}">
             <div class="card-body">
               <h5 class="card-title">{{ item.title }}</h5>
               <p class="price">{{"Price" | translate}}: {{ item.price }}</p>
