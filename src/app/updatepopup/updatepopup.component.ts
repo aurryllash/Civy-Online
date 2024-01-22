@@ -10,7 +10,7 @@ import { Product } from '../interfaces/product.interface';
   templateUrl: './updatepopup.component.html',
   styleUrl: './updatepopup.component.css'
 })
-export class UpdatepopupComponent implements OnInit{
+export class UpdatepopupComponent {
 
   constructor(private auth: AuthService, private fb: FormBuilder, @Inject(MAT_DIALOG_DATA) public data: any,
   private dialog: MatDialogRef<UpdatepopupComponent>) {
@@ -18,7 +18,6 @@ export class UpdatepopupComponent implements OnInit{
       this.auth.getProductById(this.data.usercode).subscribe(res => {
         if (Array.isArray(res) && res.length > 0) {
           this.editData = res[0];
-          console.log(this.editData)
         }
         
         this.product.setValue({id: this.editData.id, title: this.editData.title, price: this.editData.price, description: this.editData.description, category: this.editData.category, image: this.editData.image, rating: {
@@ -31,10 +30,6 @@ export class UpdatepopupComponent implements OnInit{
 
   editData!: Product;
 
-  ngOnInit(): void {
-    
-  }
-
   updateProduct() {
 
     if(this.product.valid) {
@@ -43,10 +38,8 @@ export class UpdatepopupComponent implements OnInit{
       .subscribe(res => {
         alert("product updated successfully!");
         this.dialog.close();
-        
       }
       ) 
-      console.log(productData)
     } 
     
   }

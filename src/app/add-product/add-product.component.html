@@ -19,11 +19,11 @@
         </div>
         <div class="mb-3">
             <label for="Price" class="form-label">Price</label>
-            <input type="text" class="form-control" formControlName="price" id="Price">
+            <input type="text" class="form-control"  formControlName="price" id="Price">
         </div>
         <div class="mb-3">
             <label for="Image" class="form-label">Image</label>
-            <input type="file" class="form-control" formControlName="image" id="Image">
+            <input type="file" class="form-control" formControlName="Image" (change)="onChange($event)" id="Image">
         </div>       
         <button type="submit" class="btn btn-primary" [disabled]="product.invalid">Submit</button>
         <button class="btn btn-light" routerLink="/myproducts" style="background-color: rgb(189, 189, 189); color: whitesmoke; margin-left: 20px;">Cancel</button>

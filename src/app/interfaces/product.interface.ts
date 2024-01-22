@@ -13,6 +13,7 @@ export interface Product {
     active: boolean
 };
 
+
 export interface User {
     id: string,
     name: string,
@@ -20,5 +21,6 @@ export interface User {
     email: string,
     username: string,
     password: string,
-    role: string
+    role: string,
+    image?: string
 }

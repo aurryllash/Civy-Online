@@ -13,13 +13,15 @@ export class AddProductComponent {
   category: string[] = ["men's clothing", "women's clothing","jewelery", "electronics"]
   userID?: string;
   newProduct: any;
+
+  photo!: string;
+
   constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) {
 
     this.auth.getAllusers().subscribe(res => {
       const username = sessionStorage.getItem('username')
       if(username) {
         this.userID = res.find(n => n.username == username)?.id
-        console.log(this.userID)
       }
     }) 
   }
@@ -29,7 +31,7 @@ export class AddProductComponent {
     description: ['', Validators.required],
     price: [null, [Validators.required,]],
     category: ['', Validators.required],
-    image: [null, Validators.required],
+    Image: ['', Validators.required]
   })
 
   addProduct() {
@@ -42,19 +44,30 @@ export class AddProductComponent {
         rating: {
           rate: 0,
           count: 0
-        }
-
-        
+        },
+        image: this.photo
       }
+
       
       this.auth.addProduct(this.newProduct).subscribe(res => {
         alert("Product added successfully!")
         this.product.reset()
         this.router.navigate(['/myproducts'])
       })
-      console.log(this.product.get('image')?.value);
 
 
       }
   }
+
+  onChange(event: any) {
+    console.log(event.target.files)
+    if(event.target.files) {
+      var reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0]);
+      reader.onload=(ev: any) => {
+        this.photo = ev.target.result ;
+      }
+    }
+  }
+
 }

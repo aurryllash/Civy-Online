@@ -15,6 +15,10 @@ export class MyproductsComponent {
   checkProduct: boolean = true;
  
   constructor(private auth: AuthService, private dialog: MatDialog) {
+    this.loading()
+  }
+
+  loading() {
     const username = sessionStorage.getItem('username')
     this.auth.getAllusers().subscribe(res => {
       const userId = res.find(n => n.username == username)?.id
@@ -39,6 +43,8 @@ export class MyproductsComponent {
         usercode: Id
       },
     })
-    popup.afterClosed().subscribe()
+    popup.afterClosed().subscribe(res => {
+      this.loading()
+    })
   }
 }
