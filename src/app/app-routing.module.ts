@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full',  },
   { path: 'product/:title', component: EachProductComponent},
+  { path: 'search/:title', component: HomeComponent},
   { path: 'registration', component: RegistrationComponent},
   { path: 'signIn', component: SignInComponent},
   { path: 'user', component: UserlistComponent, canActivate: [AuthGuard]},

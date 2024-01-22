@@ -1,32 +1,32 @@
-<h1>ADD PRODUCT</h1>
+<h1>{{"ADD PRODUCT" | translate}}</h1>
 <div class="container">
     <form style="width: 400px;" [formGroup]="product" (ngSubmit)="addProduct()">
         <div class="mb-3">
-          <label for="title" class="form-label">Title</label>
+          <label for="title" class="form-label">{{"Title" | translate}}</label>
           <input type="text" class="form-control" formControlName="title" id="title">
         </div>
         <div class="mb-3">
-          <label for="description" class="form-label">Description</label>
+          <label for="description" class="form-label">{{"Description" | translate}}</label>
           <input type="text" class="form-control" formControlName="description" id="description">
         </div>
 
         <div class="mb-3">
-            <label for="category" class="form-label">Category</label>
+            <label for="category" class="form-label">{{"Category" | translate}}</label>
             <select class="form-select" formControlName="category" aria-label="Default select example">
                 <option selected>select one</option>
                 <option [value]="categories" *ngFor="let categories of category">{{categories}}</option>
               </select>
         </div>
         <div class="mb-3">
-            <label for="Price" class="form-label">Price</label>
+            <label for="Price" class="form-label">{{"Price" | translate}}</label>
             <input type="text" class="form-control"  formControlName="price" id="Price">
         </div>
         <div class="mb-3">
-            <label for="Image" class="form-label">Image</label>
+            <label for="Image" class="form-label">{{"Image" | translate}}</label>
             <input type="file" class="form-control" formControlName="Image" (change)="onChange($event)" id="Image">
         </div>       
-        <button type="submit" class="btn btn-primary" [disabled]="product.invalid">Submit</button>
-        <button class="btn btn-light" routerLink="/myproducts" style="background-color: rgb(189, 189, 189); color: whitesmoke; margin-left: 20px;">Cancel</button>
+        <button type="submit" class="btn btn-primary" [disabled]="product.invalid">{{"Submit" | translate}}</button>
+        <button class="btn btn-light" routerLink="/myproducts" style="background-color: rgb(189, 189, 189); color: whitesmoke; margin-left: 20px;">{{"Cancel" | translate}}</button>
       </form>
 </div>
 

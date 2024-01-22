@@ -12,16 +12,11 @@ export class HeaderComponent implements DoCheck{
   isAuthenticated: boolean = false;
   isAdmin: boolean = false
 
+
   constructor(private auth: AuthService, private router: Router, private translate: TranslateService) {}
 
   ngDoCheck(): void {
     const userauth = sessionStorage.getItem("username") == null
-    // let currentUrl = this.router.url
-    // if(currentUrl == '/registration' || currentUrl == '/signIn') {
-    //   this.isAuthenticated = false
-    // } else {
-    //   this.isAuthenticated = true
-    // }
     if(userauth) {
       this.isAuthenticated = false
     } else {
@@ -34,8 +29,6 @@ export class HeaderComponent implements DoCheck{
     }
   }
 
-  ngOnInit(): void {
-  }
   signOut(): void {
     sessionStorage.clear()
     this.isAuthenticated = false
@@ -44,6 +37,11 @@ export class HeaderComponent implements DoCheck{
 
   switchLanguage(lang: 'geo' | 'en' | "sv") {
     this.translate.use(lang)
+  }
+
+  search(searched: HTMLInputElement) {
+    this.router.navigate(['/search/' + searched.value])
+    searched.value = ''
   }
 
 }

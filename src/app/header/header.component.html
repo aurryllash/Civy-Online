@@ -1,62 +1,3 @@
-<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#" routerLink="/home"><img src="/assets/logo/social.png" width="40px" alt=""></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="/home">{{ "Home" | translate}}</a>
-          </li>
-          <li class="nav-item" *ngIf="isAdmin">
-            <a class="nav-link" routerLink="/user">users</a>
-          </li>
-          
-        </ul>
-        <form class="d-flex me-4" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-    <div *ngIf="!isAuthenticated"  class="collapse navbar-collapse log-in" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="registration">
-                <a routerLink="/registration">Regsitration</a>
-            </li>
-            <li class="sign-in">
-                <a  routerLink="/signIn">Sign In</a>
-            </li>
-        </ul>
-    </div>
-    <ul class="translation">
-      <li class="nav-trans">
-        <a class="nav-link active" (click)="switchLanguage('geo')" aria-current="page"><img src="/assets/logo/georgia.png"  alt="GEORGIAN"></a>
-      </li>
-      <li class="nav-trans">
-        <a class="nav-link active" (click)="switchLanguage('en')" aria-current="page"><img src="/assets/logo/united-kingdom.png" alt="ENGLISH"></a>
-      </li>
-    </ul>
-
-    
-    <div *ngIf="isAuthenticated"  class="collapse navbar-collapse log-in" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="sign-in">
-              <a routerLink="/you" ><img src="/assets/logo/user (1).png" class="img-fluid mx-2" alt="profile"></a>
-          </li>
-      </ul>
-  </div>
-    <div *ngIf="isAuthenticated"  class="collapse navbar-collapse log-in" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="sign-in">
-                <a   (click)="signOut()">{{"sign out" | translate}}</a>
-            </li>
-        </ul>
-    </div>
-  </nav>
- -->
-
 <nav class="navbar navbar-expand-lg bg-dark">
   <div class="container">
     <a class="navbar-brand fs-4" routerLink="/home"><img src="/assets/logo/social.png" width="40px" alt=""></a>
@@ -82,11 +23,11 @@
           <li class="nav-item mx-2" *ngIf="isAuthenticated">
             <a class="nav-link" routerLink="/you" style="color: rgba(255, 255, 255, 0.709);">{{"My Profile" | translate}}</a>
           </li>
+          <!-- search bar -->
+          <li class="nav-item mx-6" *ngIf="isAuthenticated">
+            <input type="text" class="header-search-input" #searched (keyup.enter)="search(searched)" placeholder="search...">
+          </li>
         </ul>
-        <!-- <form class="d-flex mt-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
         <!-- login / sing up -->
         <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3 trans">
           <a class="nav-link active" (click)="switchLanguage('geo')" aria-current="page"><img src="/assets/logo/georgia.png" style="width: 22px; cursor: pointer;"  alt="GEORGIAN"></a>

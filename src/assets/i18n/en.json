@@ -18,5 +18,11 @@
     "Yes": "Yes",
     "Description": "Description",
     "description": "description",
-    "My Profile": "My Profile"
+    "My Profile": "My Profile",
+    "Title": "Title",
+    "Category": "Category",
+    "Image": "Image",
+    "Submit": "Submit",
+    "ADD PRODUCT": "ADD PRODUCT",
+    "My Products": "My Products"
 }

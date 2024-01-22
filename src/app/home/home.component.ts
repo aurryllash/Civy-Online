@@ -1,25 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Product, User } from '../interfaces/product.interface';
-import { ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit, DoCheck{
   product!: Product[];
-  users!: User[];
-  constructor(private productService: AuthService) {}
+  users!: User[];;
+  isEmpty: boolean = false
+
+  constructor(private productService: AuthService, private route: ActivatedRoute) {}
+  ngDoCheck(): void {
+    if(this.product.length > 0) {
+      this.isEmpty = false
+    } else {
+      this.isEmpty = true
+    }
+  }
   
   ngOnInit(): void {
     this.productService.getAll().subscribe(response => {
-      this.product = response
+      this.route.params.subscribe(params => {
+        if(params['title']) {
+          this.product = response.filter(n => n.title.toLowerCase().includes(params['title'].toLowerCase()))
+        } else {
+          this.product = response
+        }
+      }) 
+      
     })
     this.productService.getAllusers().subscribe(userResponse => {
       this.users = userResponse
     })
+
+    
   }
 
   getUserName(userId: string) {

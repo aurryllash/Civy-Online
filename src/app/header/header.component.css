@@ -59,7 +59,26 @@ li {
     .trans {
         margin-bottom: 10px;
     }
+    .header-search-input {
+        margin-top: 20px;
+        margin-left: 100px;
+    }
 }
 .navbar-toggler .nav-icon {
     color: white;
   } 
+.header-search-input {
+    background-color: transparent;
+    outline: none;
+    color: white;
+    border: none;
+    border-bottom: 2px solid rgba(245, 245, 245, 0.5);
+    padding: 4px;
+    transition: padding 0.3s;
+
+}
+.header-search-input:focus{
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgb(245, 245, 245);
+}
+
