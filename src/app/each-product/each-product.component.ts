@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class EachProductComponent implements OnInit{
   item?: Product;
   users!: User[];
+  product!: Product[];
   constructor(private productService: AuthService, private route: ActivatedRoute) {}
   ngOnInit(): void {
     this.route.params.subscribe( params => {
@@ -18,6 +19,7 @@ export class EachProductComponent implements OnInit{
         if(params['title']) {
           this.item = response.find(n => n.title.toLowerCase().includes(params['title'].toLowerCase()))
         }
+        this.product = response;
       })
     } 
     )
@@ -38,4 +40,5 @@ export class EachProductComponent implements OnInit{
       return "Loading users...";
     }
   }
+
   }

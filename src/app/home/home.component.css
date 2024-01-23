@@ -14,7 +14,7 @@
   }
   
   img {
-    width: 30%;
+    width: 60%;
     height: auto; /* Maintain aspect ratio */
     transition: ease-in 0.2s;
     margin-left: 10px;
@@ -22,7 +22,7 @@
     border-radius: 5px;
   }
   img:hover {
-    width: 32%;
+    padding: 5px;
   }
   .card-title {
     font-size: 18px;

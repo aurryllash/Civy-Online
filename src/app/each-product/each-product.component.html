@@ -1,35 +1,52 @@
-<!-- <div class="cards">
-    <img [src]="item?.image" class="card-img-top" alt="...">
-    <div class="cards-body">
-      <h5 class="card-title">{{ item?.title }}</h5>
-      <p class="price">{{"Price" | translate}}: {{ item?.price }}</p>
-      <p class="description"><span>{{"Description" | translate}}:</span> {{ item?.description }}</p>
-      <h6>{{"Added by" | translate}}: {{ getUserName(item?.userId) }}</h6>
-    </div>
-  </div> -->
-  <section style="background-color: #eee; overflow: hidden;" class="vh-100">
-    <div class="container py-5">
-      <div class="row justify-content-center" >
-        <div class="col-md-8 col-lg-6 col-xl-4" >
-          <div class="card text-black d-flex align-items-center justify-content-center">
-            <i class="fab fa-apple fa-lg pt-3 pb-1 px-3"></i>
-            <img [src]="item?.image" class="card-img-top" style="width: 200px; margin-bottom: 40px;" alt="...">
-            <div class="card-body">
-              <div class="text-center">
-                <h5 class="card-title d-flex align-items-center justify-content-center fs-4">{{ item?.title }}</h5>
-                <p class="text-muted mb-4">{{"Description" | translate}}: {{ item?.description }}</p>
+<section>
+    <div class="container py-5" style="margin-bottom: 300px;">
+      <div class="row  d-flex justify-content-center align-items-center h-150">
+        <div class="col  mb-4 mb-lg-0">
+          <div class="card mt-4 border-0" style="border-radius: .5rem; background-color: transparent;">
+            <div class="row g-2">
+              <div class="col-md-3 gradient-custom text-center text-white image-cont"
+                style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                <img [src]="item?.image"
+                  alt="Avatar" class="img-fluid my-5" style="width: 400px;" />
+                <i class="far fa-edit mb-5"></i>
               </div>
-              <div>
-                <div class="d-flex justify-content-between">
-                  <span>{{"Price" | translate}}:</span><span>${{ item?.price }}</span>
+              <div class="col-md-8">
+                <div class="card-body p-4">
+                  <h6 style="font-size: 22px; font-weight: 700;">{{item?.title}}</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col-6 mb-3 description">
+                      <p class="text-muted" style="font-size: 16px;">{{"Description" | translate}}: {{ item?.description }}</p>
+                    </div>
+                    <div class="col-7 ml-2">
+                        <span style="font-size: 20px; font-weight: 700;">{{"Price" | translate}}: ${{ item?.price }}</span>
+                    </div>
+                    <div class="col-7" style="margin-top: 20px;">
+                      <span style="font-size: 18px; font-weight: 400; margin-top: 20px;">{{"Added by" | translate}}:{{ getUserName(item?.userId) }}</span>
+                  </div>
+                    <div class="col-5">
+                        <button type="button" routerLink="" class="btn btn-light">ADD TO CART</button>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="d-flex justify-content-start total mt-4" style="font-weight: 600;">
-                <span>{{"Added by" | translate}}:</span><span>{{ getUserName(item?.userId) }}</span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="delivary vh-100">
+      <h1>DELIVARY & RETURNS</h1>
+      <ul class="col-6">
+        <li>One delivery fee to most locations (check our Orders & Delivery page)</li>
+        <hr>
+        <li>Free returns within 14 days (excludes final sale and made-to-order items, face masks and certain products containing hazardous or flammable materials, such as fragrances and aerosols)</li>
+        <h3 style="font-weight: 600; margin-top: 20px;">Import duties information</h3>
+        <p>Let us handle the legwork.
+
+          Delivery duties are included in the item price when shipping to all EU countries (excluding the Canary Islands), plus The United Kingdom, USA, Canada, China Mainland, Australia, New Zealand, Puerto Rico, Switzerland, Singapore, Republic Of Korea, Kuwait, Mexico, Qatar, India, Norway, Saudi Arabia, Taiwan Region, Thailand, U.A.E., Japan, Brazil, Isle of Man, San Marino, Colombia, Chile, Argentina, Egypt, Lebanon, Hong Kong SAR, Bahrain and Turkey. All import duties are included in your order – the price you see is the price you pay.</p>
+      </ul>
+    </div>
   </section>
+
+

@@ -13,7 +13,7 @@
         <div class="mb-3">
             <label for="category" class="form-label">{{"Category" | translate}}</label>
             <select class="form-select" formControlName="category" aria-label="Default select example">
-                <option selected>select one</option>
+
                 <option [value]="categories" *ngFor="let categories of category">{{categories}}</option>
               </select>
         </div>

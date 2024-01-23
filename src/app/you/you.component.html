@@ -1,12 +1,12 @@
-<section class="vh-100" style="background-color: #f4f5f7;">
+<section class="vh-100">
     <div class="container py-5">
-      <div class="row d-flex justify-content-center align-items-center h-150">
-        <div class="col col-lg-6 mb-4 mb-lg-0">
-          <div class="card mb-3" style="border-radius: .5rem;">
-            <div class="row g-0">
-              <div class="col-md-4 gradient-custom text-center text-white"
+      <div class="row  d-flex justify-content-center align-items-center h-150">
+        <div class="col  mb-4 mb-lg-0">
+          <div class="card mt-4 border-0" style="border-radius: .5rem; background-color: transparent;">
+            <div class="row g-2">
+              <div class="col-md-2 gradient-custom text-center text-white"
                 style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                <img src="/assets/logo/user (1).png" class="fs-6"
                   alt="Avatar" class="img-fluid my-5" style="width: 200px;" />
                 <h5>{{ you.name | uppercase}}</h5>
                 <h5>{{ you.lastname | uppercase}}</h5>
@@ -25,9 +25,9 @@
                         <h6>{{"username" | translate}}</h6>
                         <p class="text-muted">{{ you.username }}</p>
                     </div>
-                    <div class="buttons">
-                        <button type="button" class="btn btn-light">{{"Edit" | translate}}</button>
-                        <button type="button" routerLink="/myproducts" class="btn btn-light">{{"My Products" | translate}}</button>
+                    <div class="buttons col-lg-6 mb-lg-0">
+                        <button type="button" class="btn btn-light bg-dark">{{"Edit" | translate}}</button>
+                        <button type="button" routerLink="/myproducts" class="btn btn-light bg-dark">{{"My Products" | translate}}</button>
                     </div>
                   </div>
                 </div>

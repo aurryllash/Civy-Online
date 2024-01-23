@@ -6,7 +6,7 @@
             <img [src]="item.image" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{ item.title }}</h5>
-              <p class="price">{{"Price" | translate }}: {{ item.price  }}</p>
+              <p class="price">{{"Price" | translate }}: ${{ item.price  }}</p>
               <h6>{{"Added by" | translate }}: {{ getUserName(item.userId) }}</h6>
             </div>
           </div>

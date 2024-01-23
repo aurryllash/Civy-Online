@@ -24,7 +24,7 @@
             <a class="nav-link" routerLink="/you" style="color: rgba(255, 255, 255, 0.709);">{{"My Profile" | translate}}</a>
           </li>
           <!-- search bar -->
-          <li class="nav-item mx-6" *ngIf="isAuthenticated">
+          <li class="nav-item mx-6" *ngIf="canSearch">
             <input type="text" class="header-search-input" #searched (keyup.enter)="search(searched)" placeholder="search...">
           </li>
         </ul>

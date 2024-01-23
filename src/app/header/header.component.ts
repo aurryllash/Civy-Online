@@ -11,11 +11,17 @@ import { TranslateService } from '@ngx-translate/core';
 export class HeaderComponent implements DoCheck{
   isAuthenticated: boolean = false;
   isAdmin: boolean = false
-
+  canSearch: boolean = false
 
   constructor(private auth: AuthService, private router: Router, private translate: TranslateService) {}
 
   ngDoCheck(): void {
+    const currentUrl = this.router.url
+    if(currentUrl !== '/registration' && currentUrl !== '/signIn') {
+      this.canSearch = true
+    } else {
+      this.canSearch = false
+    }
     const userauth = sessionStorage.getItem("username") == null
     if(userauth) {
       this.isAuthenticated = false
