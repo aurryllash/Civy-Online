@@ -12,50 +12,22 @@ img {
     box-shadow: 5px 5px 5px rgba(155, 155, 155, 0.276);
 }
 /* products */
-.product {
-    margin-top: 50px;
-    font-size: 16px;
-}
 .card {
-    margin: 10px;
-    margin-left: 20px;
+    /* margin: 10px;
+    margin-left: 20px; */
     height: 400px;
     padding: 20px 10px;
     border: none;
     position: relative;
     cursor: pointer;
-
   }
   
- .card-img-top {
-    width: 30%;
-    height: auto; /* Maintain aspect ratio */
-    transition: ease-in 0.2s;
-    margin-left: 10px;
-    border: 1px solid white;
-    border-radius: 5px;
-  }
-  .card-img-top:hover {
-    width: 32%;
-  }
-  .card-title {
-    font-size: 18px;
-  }
-  .price {
-    font-weight: 600;
-  }
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  h6 {
-    font-size: 16px;
-  }
+
   /* delivary */
   .delivary ul li {
     list-style-type: disc;
 
   }
+.image-cont {
+    width: 400px;
+} 
