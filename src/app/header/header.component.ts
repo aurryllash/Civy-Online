@@ -22,7 +22,10 @@ export class HeaderComponent implements DoCheck{
     } else {
       this.canSearch = false
     }
-    const userauth = sessionStorage.getItem("username") == null
+    if(typeof sessionStorage !== 'undefined') {
+      const userauth = sessionStorage.getItem("username") == null
+    
+    
     if(userauth) {
       this.isAuthenticated = false
     } else {
@@ -33,6 +36,7 @@ export class HeaderComponent implements DoCheck{
     } else {
       this.isAdmin = false
     }
+  }
   }
 
   signOut(): void {

@@ -27,9 +27,9 @@ export class SignInComponent {
       this.userData = res;
       if(this.userData.length !== 0) {
         if(this.userData[0].password == this.user.value.password) {
-          sessionStorage.setItem('username', this.userData[0].username)
-          sessionStorage.setItem('userrole', this.userData[0].role)
-          this.router.navigate(['/home'])
+            sessionStorage.setItem('username', this.userData[0].username)
+            sessionStorage.setItem('userrole', this.userData[0].role)
+            this.router.navigate(['/home'])
         } else {
           alert("email or password is incorrect...");
           this.user.reset()

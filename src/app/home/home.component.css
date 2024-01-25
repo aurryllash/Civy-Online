@@ -1,16 +1,30 @@
+@media(max-width: 1400px) {
+  .card {
+    margin: 10px;
+    margin-left: 5px;
+    height: 400px;
+    max-width: 220px;
+    /* padding-top: 20px; */
+    padding: 20px 10px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+  }
+}
 .product {
     margin-top: 50px;
     font-size: 16px;
 }
 .card {
     margin: 10px;
-    margin-left: 20px;
+    margin-left: 5px;
     height: 400px;
+    /* max-width: 240px; */
+    /* padding-top: 20px; */
     padding: 20px 10px;
     border: none;
     position: relative;
     cursor: pointer;
-
   }
   
   img {

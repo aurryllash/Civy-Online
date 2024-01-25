@@ -8,25 +8,25 @@ import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit, DoCheck{
+export class HomeComponent implements OnInit{
   product!: Product[];
   users!: User[];;
   isEmpty: boolean = false
 
   constructor(private productService: AuthService, private route: ActivatedRoute) {}
-  ngDoCheck(): void {
-    if(this.product.length > 0) {
-      this.isEmpty = false
-    } else {
-      this.isEmpty = true
-    }
-  }
+
   
   ngOnInit(): void {
     this.productService.getAll().subscribe(response => {
       this.route.params.subscribe(params => {
         if(params['title']) {
           this.product = response.filter(n => n.title.toLowerCase().includes(params['title'].toLowerCase()))
+            if(this.product.length > 0) {
+              this.isEmpty = false
+              console.log(this.product.length)
+            } else {
+              this.isEmpty = true
+            }
         } else {
           this.product = response
         }
@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit, DoCheck{
     this.productService.getAllusers().subscribe(userResponse => {
       this.users = userResponse
     })
-
+    
     
   }
 
