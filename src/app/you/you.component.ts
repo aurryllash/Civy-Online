@@ -23,5 +23,5 @@ export class YouComponent implements OnInit{
     })
   }
 
-  
+
 }

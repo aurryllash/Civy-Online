@@ -11,6 +11,9 @@ export class AuthGuard implements CanActivate {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    if(typeof sessionStorage !== 'undefined') {
+      
+    
     if(this.auth.isLoggedIn()) {
       if(route.url.length > 0) {
         let menu = route.url[0].path;
@@ -34,6 +37,8 @@ export class AuthGuard implements CanActivate {
       this.router.navigate(['/signIn'])
       return false
     }
-
+  } else {
+    return false
+  }
   }
 }
