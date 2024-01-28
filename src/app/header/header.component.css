@@ -56,9 +56,9 @@ li {
         border-radius: 0 20px 20px 0;
         border: none;
     }
-    .trans {
+    /* .trans {
         margin-bottom: 10px;
-    }
+    } */
     .header-search-input {
         margin-top: 20px;
         margin-left: 100px;
@@ -74,7 +74,7 @@ li {
     border: none;
     border-bottom: 2px solid rgba(245, 245, 245, 0.5);
     padding: 4px;
-    transition: padding 0.3s;
+    transition: padding 0.1s;
 
 }
 .header-search-input:focus{

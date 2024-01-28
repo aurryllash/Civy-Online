@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm"  >
+        <div class="product" [ngClass]="{'empty': isEmpty}">
+          <div class="nothing" *ngIf="isEmpty">
+            <p style="font-size: 20px; font-weight: 400;">YOU HAVE NOTHING IN THE CART</p>
+          </div>
+            <ul>    
+              <li *ngFor="let item of products">
+                <ng-container >
+                  <div class="cards" >
+                    <img [src]="item.item.image" class="card-img-top" alt="Product Image" routerLink="/product/{{ item.item.title }}">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ item.item.title }}</h5>
+                      <p class="price">{{"Price" | translate}}: {{ item.item.price }}</p>
+                    </div>
+                    <div class="close">
+                      <img class="close-icon" (click)="deleteItem(item.item.id)" src="/assets/logo/cross-sign.png" alt="Close">
+                    </div>
+                  </div>
+                  
+                </ng-container>
+              </li>
+            </ul>
+          </div>
+      </div>
+      <!-- <div class="col-sm">
+        One of three columns
+        dsfsdfgsdf
+      </div> -->
+      <div class="col-sm">
+        <div class="box" style="background-color: rgba(128, 128, 128, 0.421);">
+          <div class="item-box">
+            <p>TOTAL: {{ totalPrice }}</p>
+            <p>ITEM AMOUNT: {{ total }}</p>
+          </div>
+            <div class="adress" style="margin-top: 20px;">
+              <strong>CHOOSE ADRESSE</strong>
+              <form>
+                <!-- Email input -->
+                <div  class="">
+                  <label class="labels" for="form1Example1">City</label><br>
+                  <input type="email" id="form1Example1" class="forms" placeholder="Tbilisi"/>
+                </div>
+              
+                <!-- Password input -->
+                <div  class="">
+                  <label class="labels" for="form1Example2">Adress</label><br>
+                  <input type="password" id="form1Example2" class="forms" placeholder="Marjanishvili street, 2"/>
+                  
+                </div>
+                <div class="">
+                  <label class="labels" for="form1Example2">Postal Code</label><br>
+                  <input type="postalCode" id="form1Example2" class="forms" placeholder="0001"/>
+                  
+                </div>
+              
+                <!-- Submit button -->
+                <button data-mdb-ripple-init type="submit" class="btn btn-dark">Proceed to Checkout</button>
+              </form>
+            </div>
+            
+
+        </div>
+      </div>
+    </div>
+  </div>

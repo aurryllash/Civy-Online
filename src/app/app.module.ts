@@ -21,6 +21,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { CartComponent } from './cart/cart.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -40,7 +41,8 @@ export function createTranslateLoader(http: HttpClient) {
     MyproductsComponent,
     UpdatepopupComponent,
     AddProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    CartComponent
     
   ],
   imports: [

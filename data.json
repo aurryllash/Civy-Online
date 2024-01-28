@@ -173,5 +173,11 @@
       "userId": "1",
       "active": true
     }
+  ],
+  "cart": [
+    {
+      "userId": "2",
+      "productId": ["9"]
+    }
   ]
 }

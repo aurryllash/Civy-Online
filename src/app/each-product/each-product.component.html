@@ -25,7 +25,7 @@
                       <span style="font-size: 18px; font-weight: 400; margin-top: 20px;">{{"Added by" | translate}}:{{ getUserName(item?.userId) }}</span>
                   </div>
                     <div class="col-5">
-                        <button type="button" routerLink="" class="btn btn-light">ADD TO CART</button>
+                        <button type="button" *ngIf="isAuthenticated" (click)="addCart()" class="btn btn-light">ADD TO CART</button>
                     </div>
                   </div>
                 </div>

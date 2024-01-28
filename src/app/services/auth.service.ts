@@ -42,8 +42,7 @@ export class AuthService {
   }
   addProduct(productDetails: Product) {
     return this.http.post(`http://localhost:3000/products`, productDetails)
-  }
-  
+  } 
 
   isLoggedIn() {
     return sessionStorage.getItem('username') != null;

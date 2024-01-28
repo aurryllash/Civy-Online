@@ -1,0 +1,88 @@
+.container {
+    margin-top: 200px;
+    margin-left: -15px;
+    padding: 0;
+    margin-bottom: 20px;
+}
+.product {
+    background-color: rgba(128, 128, 128, 0.133);
+    padding: 40px 0;
+}
+.empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+li {
+    list-style-type: none;
+}
+img {
+    width: 100px;
+}
+.cards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.421);
+    padding: 25px;
+    max-width:500px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+} 
+.card-body {
+    margin-left: 20px;
+}
+.card-title {
+    font-size: 18px;
+    font-weight: 400;
+}
+/* total box */
+@media(max-width: 1400px) {
+    .box {
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        
+        margin-left: 30px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .product {
+        background-color: rgba(128, 128, 128, 0.133);
+        padding: 40px 0;
+        margin-left: 35px;
+    }
+}
+.box {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+    margin-left: 30px;
+}
+.item-box {
+    font-size: 20px;
+    font-weight: 700;
+}
+.close-icon {
+    width: 20px;
+    margin-bottom: 60px;
+    opacity: 60%;
+    cursor: pointer;
+}
+/* forms */
+.forms {
+    outline: none;
+    border: 1px solid black;
+    font-size: 18px;
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 10px;
+}
+.labels {
+    font-size: 16px;
+    font-weight: 500;
+}

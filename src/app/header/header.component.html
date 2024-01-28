@@ -20,9 +20,9 @@
           <li class="nav-item mx-2" *ngIf="isAdmin">
             <a class="nav-link" routerLink="/user" style="color: rgba(255, 255, 255, 0.709);">{{"Users" | translate}}</a>
           </li>
-          <li class="nav-item mx-2" *ngIf="isAuthenticated">
-            <a class="nav-link" routerLink="/you" style="color: rgba(255, 255, 255, 0.709);">{{"My Profile" | translate}}</a>
-          </li>
+          <!-- <li class="nav-item mx-2" *ngIf="isAuthenticated">
+            <a class="nav-link" routerLink="/you" style="color: rgba(255, 255, 255, 0.709);"><img src="/assets/logo/icons8-person-24.png" alt=""></a>
+          </li> -->
           <!-- search bar -->
           <li class="nav-item mx-6" *ngIf="canSearch">
             <input type="text" class="header-search-input" #searched (keyup.enter)="search(searched)" placeholder="search...">
@@ -30,15 +30,33 @@
         </ul>
         <!-- login / sing up -->
         <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3 trans">
+          <a class="nav-link" routerLink="/you"><img src="/assets/logo/icons8-person-24.png" alt="Profile"></a>
+        </div>
+        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3 trans">
+          <a routerLink="/cart"><img class="logo" style="width: 25px;" src="/assets/logo/icons8-cart-48.png" alt="Cart"></a>
+        </div>
+        <!-- <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3 trans">
           <a class="nav-link active" (click)="switchLanguage('geo')" aria-current="page"><img src="/assets/logo/georgia.png" style="width: 22px; cursor: pointer;"  alt="GEORGIAN"></a>
           <a class="nav-link active" (click)="switchLanguage('en')" aria-current="page"><img src="/assets/logo/united-kingdom.png" style="width: 22px; cursor: pointer;" alt="ENGLISH"></a>
-        </div>
+        </div> -->
         <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3 fs-6" *ngIf="!isAuthenticated">
           <a class="text-white text-decoration-none px-3 py-1" routerLink="/signIn">{{"Login"}}</a>
           <a class="text-white text-decoration-none px-3 py-1 bg-success rounded-4" routerLink="/registration">{{"Registration" | translate}}</a>
         </div>
         <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3 fs-6" *ngIf="isAuthenticated">
           <a class="text-white text-decoration-none px-3 py-1" style="cursor: pointer;" (click)="signOut()">{{"Sign Out" | translate}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
+        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3 trans">
+          <a class="nav-link active" (click)="switchLanguage('geo')" aria-current="page"><img src="/assets/logo/georgia.png" style="width: 22px; cursor: pointer;"  alt="GEORGIAN"></a>
+          <a class="nav-link active" (click)="switchLanguage('en')" aria-current="page"><img src="/assets/logo/united-kingdom.png" style="width: 22px; cursor: pointer;" alt="ENGLISH"></a>
         </div>
       </div>
     </div>

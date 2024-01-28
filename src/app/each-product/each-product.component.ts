@@ -1,18 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { Product, User } from '../interfaces/product.interface';
 import { AuthService } from '../services/auth.service';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-each-product',
   templateUrl: './each-product.component.html',
   styleUrl: './each-product.component.css'
 })
-export class EachProductComponent implements OnInit{
+export class EachProductComponent implements OnInit, DoCheck{
   item?: Product;
   users!: User[];
   product!: Product[];
-  constructor(private productService: AuthService, private route: ActivatedRoute) {}
+  isAuthenticated: boolean = false
+
+
+  constructor(private productService: AuthService, private route: ActivatedRoute, private cart: CartService) {}
+  ngDoCheck(): void {
+    if(typeof sessionStorage !== 'undefined') {
+      const userauth = sessionStorage.getItem("username") == null
+    
+    
+    if(userauth) {
+      this.isAuthenticated = false
+    } else {
+      this.isAuthenticated = true
+    }
+  }
+  }
   ngOnInit(): void {
     this.route.params.subscribe( params => {
       this.productService.getAll().subscribe(response => {
@@ -28,6 +44,7 @@ export class EachProductComponent implements OnInit{
       this.users = response;
     })
   }
+
   getUserName(userId: any) {
     if (this.users) {
       const nameOfUser = this.users.find(n => n.id === userId);
@@ -41,4 +58,9 @@ export class EachProductComponent implements OnInit{
     }
   }
 
+  addCart() {
+    if(this.item) {
+      this.cart.addCart(this.item)
+    }
+  }
   }
