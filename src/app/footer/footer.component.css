@@ -1,0 +1,16 @@
+.vh-50 {
+    height: 50vh;
+}
+.sec-1-cols {
+    margin-top: 60px;
+}
+.col-sm h3 {
+    font-size: 15px;
+}
+.col-sm p {
+    opacity: 60%;
+    cursor: pointer;
+}
+.col-sm p:hover {
+    opacity: 100%;
+}

@@ -11,6 +11,7 @@ import { MyproductsComponent } from './myproducts/myproducts.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { CartComponent } from './cart/cart.component';
+import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'myproducts', component: MyproductsComponent, canActivate: [AuthGuard]},
   { path: 'addproduct', component: AddProductComponent, canActivate: [AuthGuard]},
   { path: 'editproduct', component: EditProductComponent, canActivate: [AuthGuard]},
-  { path: 'cart', component: CartComponent, canActivate: [AuthGuard]}
+  { path: 'cart', component: CartComponent, canActivate: [AuthGuard]},
+  { path: 'main', component: MainComponent,}
 ];
 
 @NgModule({

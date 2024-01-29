@@ -1,0 +1,48 @@
+@media(max-width: 1400px) {
+    .sec-3-col-3 {
+        margin-top: 40px;
+    }
+}
+.carousel-inner {
+    height: 500px; /* Set a fixed height for the carousel-inner, adjust as needed */
+}
+
+.carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/*  */
+.container {
+    padding: 40px;
+}
+.row {
+    margin-top: 40px;
+}
+
+/* section 2 */
+.sec-1 {
+    padding: 40px;
+}
+.icon {
+    width: 80px;
+}
+.icons-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+.icons-cont:hover {
+    background-color: rgba(128, 128, 128, 0.105);
+
+}
+.icons-cont p {
+    font-weight: 400;
+    font-size: 18px;
+}
+.icons-cont h2 {
+    font-size: 25px;
+}
