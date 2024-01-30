@@ -12,10 +12,12 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { CartComponent } from './cart/cart.component';
 import { MainComponent } from './main/main.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full',  },
+  { path: 'main', component: MainComponent,},
+  { path: '', redirectTo: '/main', pathMatch: 'full',  },
   { path: 'product/:title', component: EachProductComponent},
   { path: 'search/:title', component: HomeComponent},
   { path: 'registration', component: RegistrationComponent},
@@ -26,7 +28,7 @@ const routes: Routes = [
   { path: 'addproduct', component: AddProductComponent, canActivate: [AuthGuard]},
   { path: 'editproduct', component: EditProductComponent, canActivate: [AuthGuard]},
   { path: 'cart', component: CartComponent, canActivate: [AuthGuard]},
-  { path: 'main', component: MainComponent,}
+  {path: "**", component: NotFoundComponent}
 ];
 
 @NgModule({

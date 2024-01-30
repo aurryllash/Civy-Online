@@ -24,6 +24,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CartComponent } from './cart/cart.component';
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -46,7 +47,8 @@ export function createTranslateLoader(http: HttpClient) {
     EditProductComponent,
     CartComponent,
     MainComponent,
-    FooterComponent
+    FooterComponent,
+    NotFoundComponent
     
   ],
   imports: [
