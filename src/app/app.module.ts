@@ -25,6 +25,9 @@ import { CartComponent } from './cart/cart.component';
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { TermsComponent } from './footerComponents/terms/terms.component';
+import { AboutUsComponent } from './footerComponents/about-us/about-us.component';
+import { ContactComponent } from './footerComponents/contact/contact.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -48,7 +51,10 @@ export function createTranslateLoader(http: HttpClient) {
     CartComponent,
     MainComponent,
     FooterComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    TermsComponent,
+    AboutUsComponent,
+    ContactComponent
     
   ],
   imports: [

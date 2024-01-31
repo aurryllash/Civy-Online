@@ -44,3 +44,60 @@
 .icons-cont h2 {
     font-size: 25px;
 }
+/* product */
+@media(max-width: 1400px) {
+    .card {
+      margin: 10px;
+      margin-left: 5px;
+      height: 400px;
+      max-width: 220px;
+      /* padding-top: 20px; */
+      padding: 20px 10px;
+      border: none;
+      position: relative;
+      cursor: pointer;
+    }
+  }
+  .product {
+      margin-top: 50px;
+      font-size: 16px;
+  }
+  .card {
+      margin: 10px;
+      margin-left: 5px;
+      height: 400px;
+      /* max-width: 240px; */
+      /* padding-top: 20px; */
+      padding: 20px 10px;
+      border: none;
+      position: relative;
+      cursor: pointer;
+    }
+    
+    .card-img-top {
+      width: 60%;
+      height: auto; /* Maintain aspect ratio */
+      transition: ease-in 0.2s;
+      margin-left: 10px;
+      border: 1px solid white;
+      border-radius: 5px;
+    }
+    .card-img-top:hover {
+      padding: 5px;
+    }
+    .card-title {
+      font-size: 18px;
+    }
+    .price {
+      font-weight: 600;
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    h6 {
+      font-size: 16px;
+    }

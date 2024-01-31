@@ -13,6 +13,8 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 import { CartComponent } from './cart/cart.component';
 import { MainComponent } from './main/main.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { TermsComponent } from './footerComponents/terms/terms.component';
+import { AboutUsComponent } from './footerComponents/about-us/about-us.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -28,11 +30,13 @@ const routes: Routes = [
   { path: 'addproduct', component: AddProductComponent, canActivate: [AuthGuard]},
   { path: 'editproduct', component: EditProductComponent, canActivate: [AuthGuard]},
   { path: 'cart', component: CartComponent, canActivate: [AuthGuard]},
+  { path: 'terms', component: TermsComponent},
+  { path: 'about-us', component: AboutUsComponent},
   {path: "**", component: NotFoundComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'top' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
