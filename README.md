@@ -1,4 +1,5 @@
-# FinalProject
+# CivyOnline 
+Civy Online is a cutting-edge e-commerce platform built exclusively with Angular, offering a streamlined and immersive online shopping experience. With a focus on modern design and seamless user interactions, Civy Online caters to individuals who appreciate simplicity, performance, and a visually engaging interface.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
 
